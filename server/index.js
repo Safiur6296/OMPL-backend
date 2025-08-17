@@ -6,11 +6,14 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
-    credentials: false
+  origin: 'https://ompl-frontend.onrender.com',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
+app.options('*', cors());
+
 app.use(express.json());
 
 
