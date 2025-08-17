@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMPL Registration</title>
+    <link rel="stylesheet" href="css/registration.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form netlify action="#" method="post" enctype="multipart/form-data">
+            <div class="form-header">
+                <h1>OLD MALDA PREMIER LEAGUE</h1>
+                <p>Player Registration Form</p>
+            </div>
+
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="playerName">Player Name*</label>
+                    <input type="text" id="playerName" name="playerName" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="playerAge">Player Age*</label>
+                    <input type="number" id="playerAge" name="playerAge" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="playerPhoto">Upload Player Photo*</label>
+                    <input type="file" id="playerPhoto" name="playerPhoto" accept="image/*" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address*</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="phoneNumber">Phone Number*</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="aadharCard">Upload Aadhar Card*</label>
+                    <input type="file" id="aadharCard" name="aadharCard" accept="application/pdf,image/*" required>
+                </div>
+
+                <div class="radio-group">
+                    <label class="radio-label">Player Category*</label>
+                    <div class="radio-options">
+                        <label class="radio-item">
+                            <input type="radio" name="playerCategory" value="BATSMAN" required>
+                            <span>BATSMAN</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="playerCategory" value="BOWLER">
+                            <span>BOWLER</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="playerCategory" value="ALL ROUNDER">
+                            <span>ALL ROUNDER</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="radio-group">
+                    <label class="radio-label">Player Type*</label>
+                    <div class="radio-options">
+                        <label class="radio-item">
+                            <input type="radio" name="playerType" value="LEFTY" required>
+                            <span>LEFTY</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="playerType" value="RIGHTY">
+                            <span>RIGHTY</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Add this before the form-footer div -->
+            <div class="radio-group">
+                <label class="radio-label">Upper Jersey Size*</label>
+                <div class="radio-options">
+                    <label class="radio-item">
+                        <input type="radio" name="upperJerseySize" value="S" required>
+                        <span>S</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="upperJerseySize" value="M">
+                        <span>M</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="upperJerseySize" value="L">
+                        <span>L</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="upperJerseySize" value="XL">
+                        <span>XL</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="upperJerseySize" value="XXL">
+                        <span>XXL</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="radio-group">
+                <label class="radio-label">Lower Jersey Size*</label>
+                <div class="radio-options">
+                    <label class="radio-item">
+                        <input type="radio" name="lowerJerseySize" value="28" required>
+                        <span>28</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="lowerJerseySize" value="30">
+                        <span>30</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="lowerJerseySize" value="32">
+                        <span>32</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="lowerJerseySize" value="34">
+                        <span>34</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit">Pay ₹299</button>
+                <a href="index.html" class="home-btn">Back to Home</a>
+            </div>
+        </form>
+        <div id="loadingScreen" class="loading-screen" style="display: none;">
+            <div class="loader"></div>
+            <h2>Payment Successful!</h2>
+            <p>Please wait while we process your registration...</p>
+        </div>
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h2>Registration Successful!</h2>
+            <p>You can get your card from Official OMPL Whatsapp Group</p>
+            <p>Thank you for Registration</p>
+        </div>
+    </div>
+
+    <script>
+        function validateFiles() {
+            const maxSize = 5 * 1024 * 1024; // 5MB
+            const photo = document.getElementById('playerPhoto').files[0];
+            const aadhar = document.getElementById('aadharCard').files[0];
+
+            if (!photo || !aadhar) {
+                alert('Please upload all required files');
+                return false;
+            }
+
+            if (photo.size > maxSize || aadhar.size > maxSize) {
+                alert('File size should not exceed 5MB');
+                return false;
+            }
+
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/pdf'];
+            if (!allowedTypes.includes(photo.type) ||
+                !allowedTypes.includes(aadhar.type)
+            ) {
+                alert('Please upload valid file types (JPG, PNG, PDF)');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateForm() {
+            // Check required text fields
+            const requiredFields = ['playerName', 'playerAge', 'address', 'phoneNumber'];
+            for (const fieldId of requiredFields) {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    alert(`Please fill in ${fieldId}`);
+                    return false;
+                }
+            }
+
+            // Check radio button groups
+            const radioGroups = ['playerCategory', 'playerType', 'upperJerseySize', 'lowerJerseySize'];
+            for (const groupName of radioGroups) {
+                if (!document.querySelector(`input[name="${groupName}"]:checked`)) {
+                    alert(`Please select ${groupName}`);
+                    return false;
+                }
+            }
+
+            // Validate files
+            return validateFiles();
+        }
+        // Replace the existing form submit event listener with this code
+        document.querySelector('form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            if (!validateForm()) return;
+
+            const button = this.querySelector('button[type="submit"]');
+            button.disabled = true;
+            button.textContent = 'Processing...';
+
+            try {
+                // Create Razorpay order
+                const orderResponse = await fetch('/api/create-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: 100 // ₹299 in paise
+                    })
+                });
+
+                if (!orderResponse.ok) {
+                    throw new Error('Failed to create order');
+                }
+
+                const orderData = await orderResponse.json();
+
+                // Store form data
+                const formData = new FormData(this);
+                const formObject = {};
+                formData.forEach((value, key) => {
+                    if (value instanceof File) {
+                        formObject[key] = {
+                            name: value.name,
+                            type: value.type
+                        };
+                    } else {
+                        formObject[key] = value;
+                    }
+                });
+                localStorage.setItem('registrationData', JSON.stringify(formObject));
+
+                // Configure Razorpay
+                const options = {
+                    key: 'rzp_test_R62DdZP3YUMqYs', // Your Razorpay Key ID
+                    amount: orderData.amount,
+                    currency: "INR",
+                    name: "Old Malda Premier League",
+                    description: "Player Registration Fee",
+                    order_id: orderData.orderId,
+                    // Replace the existing handler option in the Razorpay configuration
+                    handler: async function (response) {
+                        try {
+                            // Show loading screen
+                            document.getElementById('loadingScreen').style.display = 'flex';
+                            document.querySelector('form').style.display = 'none';
+                            // Get stored form data
+                            const formData = new FormData();
+                            const storedData = JSON.parse(localStorage.getItem('registrationData'));
+
+                            // Add form fields
+                            Object.keys(storedData).forEach(key => {
+                                if (key !== 'playerPhoto' && key !== 'aadharCard') {
+                                    formData.append(key, storedData[key]);
+                                }
+                            });
+
+                            // Add payment details
+                            formData.append('paymentId', response.razorpay_payment_id);
+                            formData.append('orderId', response.razorpay_order_id);
+
+                            // Handle file uploads
+                            const fileInputs = ['playerPhoto', 'aadharCard'];
+                            for (const fileInput of fileInputs) {
+                                const file = document.getElementById(fileInput).files[0];
+                                if (file) {
+                                    const base64Data = await toBase64(file);
+                                    formData.append(fileInput, base64Data);
+                                    formData.append(fileInput + 'Name', file.name);
+                                    formData.append(fileInput + 'Type', file.type);
+                                }
+                            }
+
+                            // Submit to Google Apps Script
+                            const scriptResponse = await fetch('https://script.google.com/macros/s/AKfycbzvQN3ku28-5lpg0kXZv7mfFrosUMHt1hiMv8FuHRMFNFn4obBESHUixOyWCkAN4oo3PA/exec', {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            const result = await scriptResponse.json();
+                            if (result.result === 'success') {
+                                // Keep loading screen visible for 2 seconds before redirect
+                                setTimeout(() => {
+                                    window.location.href = 'payment-success.html';
+                                }, 2000);
+                            } else {
+                                throw new Error('Registration failed');
+                            }
+                        } catch (error) {
+                            console.error('Error:', error);
+                            alert('Registration failed. Please contact support.');
+                        }
+                    },
+                    prefill: {
+                        name: document.getElementById('playerName').value,
+                        contact: document.getElementById('phoneNumber').value
+                    },
+                    notes: {
+                        address: "OMPL Registration"
+                    },
+                    theme: {
+                        color: "#528FF0"
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+
+                rzp.on('payment.failed', function (response) {
+                    alert('Payment failed. Please try again.');
+                    button.disabled = false;
+                    button.textContent = 'Pay ₹299';
+                });
+
+                rzp.open();
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Payment initialization failed. Please try again.');
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Pay ₹299';
+            }
+        });
+
+        // Helper function to convert file to base64
+        function toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = error => reject(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

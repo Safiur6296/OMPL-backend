@@ -3,14 +3,13 @@ const cors = require('cors');
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 require('dotenv').config();
+const path = require('path');
 
 const app = express();
-app.use(cors({
-  origin: 'https://ompl-frontend.onrender.com',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
+
+app.use(express.static(path.join(__dirname, 'src')));
+
+app.use(cors());
 
 app.options('*', cors());
 
@@ -90,6 +89,11 @@ app.post('/api/payment-webhook', async (req, res) => {
         res.status(400).json({ error: 'Invalid webhook signature' });
     }
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

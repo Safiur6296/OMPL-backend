@@ -1,0 +1,341 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #13294B, #1a365d);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo-container {
+    margin-bottom: 1rem;
+}
+
+/* Update the main logo styles */
+.main-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4ADE80;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Update the hero section styles */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                url('../assets/images/cricket-stadium.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Update the hero logo styles */
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    border: 4px solid #4ADE80;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+
+/* Update the feature icon styles */
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #4ADE80;
+}
+
+/* Update the footer logo styles */
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #4ADE80;
+}
+
+/* Add a new class for the hero content wrapper */
+.hero-content-wrapper {
+    background-color: rgba(19, 41, 75, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 1.2em;
+    margin-top: 1rem;
+    color: #4ADE80;
+}
+
+/* Update the hero section styles */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                url('../assets/images/cricket-stadium.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Add a new class for the hero content wrapper */
+.hero-content-wrapper {
+    background-color: rgba(19, 41, 75, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Update the hero logo styles */
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    border: 4px solid #4ADE80;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+.register-button {
+    display: inline-block;
+    background-color: #4ADE80;
+    color: #13294B;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(74, 222, 128, 0.2);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Update the feature icon styles */
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #4ADE80;
+}
+.feature-social {
+    margin-top: 1rem;
+    background-color: #1877F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.feature-social i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.feature-social:hover {
+    transform: scale(1.1);
+}
+
+.trophy-icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.prize-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(74, 222, 128, 0.1);
+    border-radius: 8px;
+}
+
+.prize-text {
+    color: #13294B;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+footer {
+    background: #13294B;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+/* Update the footer logo styles */
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #4ADE80;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.youtube:hover {
+    background-color: #cc0000;
+}
+
+.facebook {
+    background-color: #1877F2;
+}
+
+.facebook:hover {
+    background-color: #0d65d9;
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+     .social-links {
+        gap: 1rem;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    .trophy-icon {
+        width: 120px;
+    }
+    
+    .prize-text {
+        font-size: 1rem;
+    }
+}
