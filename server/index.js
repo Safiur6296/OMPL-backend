@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your actual domain
+    origin: ['http://localhost:3000','https://ompl.netlify.app'] ,// Replace with your actual domain
     methods: ['GET', 'POST'],
     credentials: true
 }));
