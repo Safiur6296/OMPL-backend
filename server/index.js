@@ -7,11 +7,9 @@ require('dotenv').config();
 const app = express();
 app.use(cors({
     origin: 'https://ompl.netlify.app',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    credentials: false
 }));
 app.use(express.json());
 
