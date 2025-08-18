@@ -25,7 +25,7 @@ header {
     background: #334f02;
     padding: 10px 15px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .menu-btn i {
@@ -40,8 +40,8 @@ header {
     top: 0;
     width: 300px;
     height: 100%;
-    background:linear-gradient(135deg, #13294B, #1a365d);
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #13294B, #1a365d);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease;
     z-index: 1000;
 }
@@ -510,4 +510,38 @@ footer {
     .prize-text {
         font-size: 1rem;
     }
+
+
+    .logo-container {
+        position: relative;
+        width: 90px;
+        height: 90px;
+    }
+
+    .main-logo {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #4ADE80;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 2px solid #4ADE80;
+        box-shadow: 0 0 10px #4ADE80, 0 0 30px #4ADE80;
+        animation: rotateGlowCircle 4s linear infinite;
+        z-index: 1;
+    }
+
+
 }

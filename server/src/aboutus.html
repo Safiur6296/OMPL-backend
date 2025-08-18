@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMPL | About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .about-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-subtitle {
+            color: #3498db;
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            color: #34495e;
+            font-size: 1.1em;
+        }
+
+        .mission-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mission-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .mission-list li:before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                margin: 20px;
+                padding: 15px;
+            }
+            
+            .about-title {
+                font-size: 2em;
+            }
+            
+            .about-subtitle {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rules.html">Rules of OMPL</a></li>
+            <li><a href="prize.html">Prizes</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="assets/images/ompl-logo.png" alt="OMPL Logo" class="main-logo">
+        </div>
+        <h1>Welcome to the Old Malda Premier League</h1>
+        <p class="tagline">Experience Cricket Like Never Before!</p>
+    </header>
+
+    <div class="about-container">
+        <h1 class="about-title">About Us</h1>
+        
+        <div class="about-section">
+            <div class="highlight-box">
+                <p class="about-text">Welcome to the <strong>Old Malda Premier League (OMPL)</strong> — a celebration of cricket, community, and sportsmanship in the heart of Old Malda.</p>
+            </div>
+
+            <p class="about-text">OMPL is a local cricket tournament that brings together passionate players, enthusiastic fans, and the vibrant spirit of Old Malda. Hosted at the historic <strong>Kala Chand High School Ground</strong>, the league is more than just a competition — it's a movement to promote grassroots cricket and unite the community through the love of the game.</p>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-subtitle">🌟 Our Journey</h2>
+            <p class="about-text">The <strong>first season of OMPL</strong> was a grand success, filled with thrilling matches, unforgettable moments, and overwhelming support from players and spectators alike. It set the tone for what OMPL stands for — excellence, fairness, and entertainment.</p>
+            <p class="about-text">Now, we're gearing up for <strong>Season 2</strong>, and it promises to be even bigger and better. With more teams, exciting prizes, and live coverage, OMPL is ready to take cricket in Old Malda to the next level.</p>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-subtitle">📍 Venue</h2>
+            <p class="about-text">All matches are held at the <strong>Old Malda Kala Chand High School Ground</strong>, a place that has become the beating heart of local cricket.</p>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-subtitle">Our Mission</h2>
+            <ul class="mission-list">
+                <li>To provide a platform for emerging cricket talent in <strong>Malda</strong></li>
+                <li>To foster community engagement through sports</li>
+                <li>To deliver a professional and thrilling cricket experience for players and fans</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <p class="about-text" style="text-align: center; font-size: 1.2em;">Join us as we continue this incredible journey. Whether you're a player, a fan, or a supporter — <strong>OMPL is your league</strong>.</p>
+        </div>
+    </div>
+     <footer>
+        <div class="footer-content">
+            <img src="assets/images/ompl-logo.png" alt="OMPL Logo" class="footer-logo">
+            <div class="social-links">
+                <a href="https://youtube.com/@oldmaldapremiereleague?si=2OYI1HKH5C66osMU" class="social-link youtube"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Old Malda Premier League. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const sideMenu = document.getElementById('sideMenu');
+            const menuBtn = document.querySelector('.menu-btn');
+
+            if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                sideMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

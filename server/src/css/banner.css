@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.ompl-banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ompl-banner img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #4ADE80; /* green border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .ompl-banner {
+        margin: 10px auto;
+    }
+    .ompl-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #4ADE80; /* green border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+}
+
+@media screen and (max-width: 480px) {
+    .ompl-banner {
+        padding: 0 10px;
+    }
+}
