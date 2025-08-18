@@ -9,16 +9,91 @@ body {
 header {
     background: linear-gradient(135deg, #13294B, #1a365d);
     color: white;
-    padding: 2rem 0;
+    padding: 2.2rem 0;
     text-align: center;
     position: relative;
 }
 
-.logo-container {
-    margin-bottom: 1rem;
+/*Menu styles*/
+/* Menu Button Styles */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    cursor: pointer;
+    background: #334f02;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.menu-btn i {
+    font-size: 24px;
+    color: #f5f2f2;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background:linear-gradient(135deg, #13294B, #1a365d);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn i {
+    font-size: 24px;
+    color: #f5f2f2;
+}
+
+.menu-items {
+    padding: 60px 0 0 0;
+    list-style: none;
+}
+
+.menu-items li {
+    padding: 15px 30px;
+}
+
+.menu-items li a {
+    color: #f5f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu-items li a:hover {
+    color: #4ADE80;
+    padding-left: 10px;
+}
+
+/* .logo-container {
+    margin-bottom: 1rem;
+} */
+
 /* Update the main logo styles */
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
 .main-logo {
     width: 120px;
     height: 120px;
@@ -26,12 +101,40 @@ header {
     object-fit: cover;
     border: 3px solid #4ADE80;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 2;
 }
+
+/* Glowing rotating circle */
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid #4ADE80;
+    box-shadow: 0 0 15px #4ADE80, 0 0 30px #4ADE80;
+    animation: rotateGlowCircle 4s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotateGlowCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* Update the hero section styles */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
-                url('../assets/images/cricket-stadium.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url('../assets/images/cricket-stadium.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -63,10 +166,12 @@ header {
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    /* Perfect circle */
     object-fit: cover;
     margin-bottom: 1rem;
     border: 2px solid #4ADE80;
 }
+
 
 /* Update the footer logo styles */
 .footer-logo {
@@ -77,6 +182,61 @@ header {
     margin-bottom: 1rem;
     border: 2px solid #4ADE80;
 }
+
+.feature-card {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #4ADE80;
+    /* Small green border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+
+.photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* space between cards */
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    /* allows wrapping on smaller screens */
+    text-align: center;
+}
+
+.photo-card {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #4ADE80;
+    /* Small green border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
 
 /* Add a new class for the hero content wrapper */
 .hero-content-wrapper {
@@ -102,8 +262,8 @@ h1 {
 
 /* Update the hero section styles */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
-                url('../assets/images/cricket-stadium.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url('../assets/images/cricket-stadium.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -145,6 +305,7 @@ h1 {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
 }
+
 .register-button {
     display: inline-block;
     background-color: #4ADE80;
@@ -171,14 +332,14 @@ h1 {
     background-color: white;
 }
 
-.feature-card {
+/* .feature-card {
     text-align: center;
     padding: 2rem;
     border-radius: 10px;
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
+} */
 
 .feature-card:hover {
     transform: translateY(-5px);
@@ -193,6 +354,7 @@ h1 {
     margin-bottom: 1rem;
     border: 2px solid #4ADE80;
 }
+
 .feature-social {
     margin-top: 1rem;
     background-color: #1877F2;
@@ -205,6 +367,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .feature-social i {
     color: white;
     font-size: 1.2rem;
@@ -222,7 +385,7 @@ h1 {
 }
 
 .prize-details {
-    margin-top: 1rem;
+    margin-top: -1rem;
     padding: 1rem;
     background-color: rgba(74, 222, 128, 0.1);
     border-radius: 8px;
@@ -302,9 +465,17 @@ footer {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Responsive Design */
@@ -318,14 +489,15 @@ footer {
     }
 
     .features {
-        grid-template-columns: 1fr;
-        padding: 2rem 1rem;
+        justify-items: center;
+        text-align: center;
     }
 
-     .social-links {
+
+    .social-links {
         gap: 1rem;
     }
-    
+
     .social-link {
         width: 35px;
         height: 35px;
@@ -334,7 +506,7 @@ footer {
     .trophy-icon {
         width: 120px;
     }
-    
+
     .prize-text {
         font-size: 1rem;
     }

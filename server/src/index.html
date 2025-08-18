@@ -10,6 +10,19 @@
 </head>
 
 <body>
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="menu-items">
+            <li><a href="#rules">Rules of OMPL</a></li>
+            <li><a href="#prizes">Prizes</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </div>
     <header>
         <div class="logo-container">
             <img src="assets/images/ompl-logo.png" alt="OMPL Logo" class="main-logo">
@@ -56,6 +69,7 @@
                 </a>
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -73,6 +87,12 @@
             <p>&copy; 2024 Old Malda Premier League. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
