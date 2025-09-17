@@ -478,7 +478,49 @@ footer {
     }
 }
 
-/* Responsive Design */
+/* Photo Gallery Styles */
+.photo-gallery {
+    padding: 2rem 1rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+.gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    justify-items: center;
+}
+.gallery-img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .gallery-img {
+        max-width: 100vw;
+        width: 100%;
+        border-radius: 10px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: block;
+    }
+}
 @media (max-width: 768px) {
     h1 {
         font-size: 2em;
